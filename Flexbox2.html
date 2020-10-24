@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+    .container{
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        /* eğer box'lar fazla olursa taşmayı önler bir alt satırdan devam eder (wrap)*/
+        flex-wrap: wrap;
+        min-height: 600px;
+        background: black;
+        flex-direction: column;
+        justify-content: flex-start;   /* dikeyde olması için */
+    }
+    .box{
+        text-align: center;
+        background: #f2f2f2;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 10px;
+    }
+    .box-1{
+        /* sıra vererek asıl sıramalasını değiştirebilirim (order)*/
+        order: 3;
+        background: red;
+        /* flex-growların toplamı 6 olduğu için bu altıda birini dolduracak */
+        flex-grow: 1;
+    }
+    .box-2{
+        order: 1;
+        background: blue;
+        /* kendi aling verme */
+        align-self: flex-end;
+         /* flex-growların toplamı 6 olduğu için bu altıda ikisini dolduracak */
+        flex-grow: 2;
+    }
+    .box-3{
+        order: 2;
+        background: green;
+         /* flex-growların toplamı 6 olduğu için bu altıda üçünü dolduracak yani yarısını dolduracak*/
+        flex-grow: 3;
+    }
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box box-1">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+
+        </div>
+        <div class="box box-2">
+            <h1>Article 2</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="box box-3">
+            <h1>Article 3</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+        
+        </div>
+    </div>
+
+</body>
+</html>
